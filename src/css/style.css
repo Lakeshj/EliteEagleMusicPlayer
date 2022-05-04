@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Lato&family=Poppins:ital,wght@0,100;0,400;1,500&display=swap');
+
+/* 
+font-family: 'Fira Code', monospace;
+font-family: 'Lato', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+:root{
+    --boxshad : 0 0 10px 6px rgb(0,0,0,0.4); 
+    --boxshad2 : 0 0 8px 6px rgb(0,0,0,0.45); 
+    --inboxshad : inset 0 0 10px 5px rgb(0,0,0,0.4); 
+    --inboxshad2 : inset 0 0 14px 6px rgb(0 0 0 / 60%); 
+    --textshad : 0 5px 5px rgb(0,0,0,0.4); 
+    --textshad2 : 0 2px 10px rgb(0,0,0,1); 
+    --intextshad : 0 0 8px 2.35px rgb(29 203 160); 
+    --lettspace : 0.13rem;
+    --wdspace : 1rem;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif; 
+}
+
+body{
+    background: #00d2d3;  
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    border: 0.1rem solid black;
+    gap: 4rem;
+}
+h1{
+    font-size: 4rem;
+    color: #222f3e;
+}
+
+.M-player{
+    width: 32rem;
+    /* height: 43rem; */
+    border-radius: 2rem;
+    padding: 2rem;
+    background-color: #f7b42c;
+    background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--boxshad);
+    position: relative;
+}
+
+h2{
+    font-size: 2rem;
+    text-shadow: var(--textshad);
+    margin: 0.5rem auto;
+    letter-spacing: var(--lettspace);
+    word-spacing: var(--wdspace);
+}
+h3{
+    font-size: 1.2rem;
+    color: #1d2c3dc6;
+    letter-spacing: var(--lettspace);
+    word-spacing: var(--wdspace);
+}
+
+.SongImage{
+    width: 22rem;
+    height: 22rem;
+    box-shadow: var(--inboxshad2);
+    border-radius: 20%;
+    padding: 1rem;
+    margin: 2rem;
+
+}
+.SongImage img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* volume controller :start here */
+
+.volumeContainer{
+    width: 3.35rem;
+    background: #223449;
+    border-radius: 2rem;
+    padding: 0.95rem 0.5rem;
+    position: absolute;
+    bottom: 19rem;
+    right: 0.79rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.VolumeControl{
+    width: 0.5rem;
+    height: 7.5rem;
+    background: #7b7d78;
+    border-radius: 1rem;
+    position: relative;
+    transform: rotate(180deg);
+    cursor: pointer;
+    transition: 0.5s ;
+}
+
+.volumeContainer .volicon{
+    font-size: 1.82rem;
+    color: #95b1d1;
+    margin-top: 0.5rem;
+}
+
+#volDot{
+    color: #c8d6e5;
+    box-shadow: var(--intextshad);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    
+}
+.VolDot{
+    /* height: 1rem; */
+    /* width: 1rem; */
+    font-size: 1rem;
+    display: flex;
+    position: absolute;
+    top: 25%;
+    left: -0.25rem;
+    justify-content: center;
+    color: #c8d6e5;
+} 
+
+ /* for disable function after mute */
+.disable{
+    pointer-events:none;
+}
+/* volume controller :End here */
+
+/* animation for Rotate Music Cover Image */
+.anime{
+    animation: imageRotate 5s linear infinite;
+    -moz-animation: imageRotate 5s linear infinite;
+    -webkit-animation: imageRotate 5s linear infinite;
+    -o-animation: imageRotate 5s linear infinite;
+}
+
+@keyframes imageRotate{
+    from{ transform: rotate(0deg);}
+    to{ transform: rotate(360deg);}
+}
+@-moz-keyframes imageRotate{
+    from{ transform: rotate(0deg);}
+    to{ transform: rotate(360deg);}
+}
+@-webkit-keyframes imageRotate{
+    from{ transform: rotate(0deg);}
+    to{ transform: rotate(360deg);}
+}
+@-o-keyframes imageRotate{
+    from{ transform: rotate(0deg);}
+    to{ transform: rotate(360deg);}
+}
+
+/* dynamic progress bar for Music duration */
+.progressContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.progressContainer .progressTime{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font: 300 1.5rem fantasy;
+    letter-spacing: 0.1rem;
+    text-shadow: var(--textshad2);
+}
+
+.progressContainer .progrssBar{
+    position: relative;
+    width: 21rem;
+    height: 1.2rem;
+    background: #222f3e;
+    border-radius: 2rem;
+    margin: 1rem 2rem 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+.progressContainer #bar{
+    width: 0%;
+    height: 0.6rem;
+    background: #1263c1;
+    border-radius: 2rem;
+}
+
+/* for audio controls  */
+.controls{
+    width: 13rem;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+}
+.controls i{
+    font-size: 1.95rem;
+    color: #95b1d1;
+    background: #741115;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--boxshad2);
+}
+.fa-play,
+.fa-pause{
+    height: 4.75rem;
+    width: 4.75rem;
+}
+#prev,
+#next{
+    height: 3.75rem;
+    width: 3.75rem;
+}
+.controls i:hover{
+    color: #060606;
+    background: #b5aba9;
+}
+
+i:active{
+    transform: scale(0.95);
+}

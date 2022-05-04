@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="./src/favicon/favicon48.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="description" content="Elite Eagle Music Player">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteEagle Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./src/css/style.css">
+
+</head>
+<body>
+    <section class="main-section">
+        <div class="container">
+            <h1>EliteEagle Music Player </h1>
+            <div class="M-player">
+                <h2 id="title">Title</h2>
+                <h3 id="artist">Artist</h3>
+                <div class="SongImage">
+                    <img id="songImg" src="./src/image/happier.png" alt="songs image">
+                </div>
+                <div class="volumeContainer">
+                    <div  id="VolumeControl" class="VolControl">
+                        <div class="volume" id="Volume">
+                            <i id="volDot" class=" fa fa-circle "></i>
+                        </div>
+                    </div>
+                    <div class="volicon">
+                        <i class="fa-solid fa-volume-up" id="volonoff"></i>
+                    </div>
+                </div>
+                <div class="progressContainer">
+                    <div class="progressTime">
+                        <div class="current_time"> --:-- </div>
+                        <div class="Total_duration"> --:-- </div>
+                    </div>
+                    <div class="progrssBar" id="progrssBar">
+                        <div id="bar"></div>
+                    </div>
+                </div>
+                <audio id="audio" src="" ></audio>
+                <div class="controls">
+                    <i class="fas fa-backward" id="prev" title="prev"></i>
+                    <i class="fas fa-play" id="play" title="play"></i>
+                    <i class="fas fa-forward" id="next" title="next"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./src/js/index.js"></script>
+</body>
+</html>
